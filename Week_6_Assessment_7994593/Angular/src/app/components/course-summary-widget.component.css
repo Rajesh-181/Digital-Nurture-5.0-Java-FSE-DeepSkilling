@@ -1,0 +1,58 @@
+/* Widget outer container box */
+.summary-widget {
+  border: 1px dashed #2196f3;
+  padding: 15px;
+  background-color: #f7fbff;
+  border-radius: 4px;
+  margin: 20px 0;
+  max-width: 600px;
+  box-sizing: border-box;
+}
+
+/* Fieldset for testing singleton updates */
+.add-fieldset {
+  border: 1px solid #bbdefb;
+  border-radius: 4px;
+  background-color: #ffffff;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.add-fieldset legend {
+  font-weight: bold;
+  color: #1976d2;
+  padding: 0 5px;
+}
+
+.form-row {
+  margin-bottom: 8px;
+}
+
+.form-row label {
+  display: inline-block;
+  width: 60px;
+  font-size: 0.9em;
+}
+
+.form-row input {
+  padding: 4px;
+  width: 150px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Quick add button styling */
+.quick-add-btn {
+  margin-top: 5px;
+  padding: 6px 12px;
+  border: 1px solid #1976d2;
+  background-color: #e3f2fd;
+  color: #1565c0;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.quick-add-btn:hover {
+  background-color: #bbdefb;
+}

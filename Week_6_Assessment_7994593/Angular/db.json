@@ -1,0 +1,86 @@
+{
+  "courses": [
+    {
+      "id": "101",
+      "name": "Introduction to Angular",
+      "code": "CS101",
+      "credits": 3,
+      "gradeStatus": "passed"
+    },
+    {
+      "id": "102",
+      "name": "Web Development Basics",
+      "code": "CS102",
+      "credits": 4,
+      "gradeStatus": "passed"
+    },
+    {
+      "id": "103",
+      "name": "Database Management Systems",
+      "code": "CS103",
+      "credits": 3,
+      "gradeStatus": "pending"
+    },
+    {
+      "id": "104",
+      "name": "Data Structures & Algorithms",
+      "code": "CS104",
+      "credits": 4,
+      "gradeStatus": "failed"
+    },
+    {
+      "id": "105",
+      "name": "Advanced JavaScript",
+      "code": "CS105",
+      "credits": 1,
+      "gradeStatus": "pending"
+    },
+    {
+      "id": "_-uoJlbvEIw",
+      "name": "Alice Smith's Selected Course (Template)",
+      "code": "REG101",
+      "credits": 4,
+      "gradeStatus": "pending"
+    }
+  ],
+  "students": [
+    {
+      "id": "1",
+      "name": "Alice Johnson",
+      "email": "alice@example.com"
+    },
+    {
+      "id": "2",
+      "name": "Bob Smith",
+      "email": "bob@example.com"
+    },
+    {
+      "id": "3",
+      "name": "Charlie Brown",
+      "email": "charlie@example.com"
+    }
+  ],
+  "enrollments": [
+    {
+      "id": "1",
+      "studentId": 1,
+      "courseId": 101
+    },
+    {
+      "id": "2",
+      "studentId": 2,
+      "courseId": 101
+    },
+    {
+      "id": "3",
+      "studentId": 3,
+      "courseId": 102
+    },
+    {
+      "id": "4",
+      "studentId": 1,
+      "courseId": 103
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

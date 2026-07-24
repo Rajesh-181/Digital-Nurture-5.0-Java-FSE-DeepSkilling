@@ -1,0 +1,60 @@
+.courses-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+}
+
+.search-section {
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.search-section input {
+  padding: 8px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* Cursor pointer style to signify cards are clickable details triggers */
+.card-wrapper {
+  display: block;
+  cursor: pointer;
+}
+
+.selected-box {
+  margin-top: 25px;
+  padding: 12px;
+  border: 1px solid #777;
+  background-color: #fafafa;
+  max-width: 500px;
+  border-radius: 4px;
+}
+
+.selected-box p {
+  margin: 0;
+  font-weight: bold;
+}
+
+.no-courses-msg {
+  color: #666;
+  font-style: italic;
+  margin-top: 15px;
+}
+
+.error-banner {
+  color: #c62828;
+  border: 1px solid #c62828;
+  background-color: #ffebee;
+  padding: 10px;
+  margin-bottom: 15px;
+  max-width: 500px;
+  border-radius: 4px;
+}
+
+.loading-notice {
+  font-style: italic;
+  color: #666;
+}

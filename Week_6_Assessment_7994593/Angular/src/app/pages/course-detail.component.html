@@ -1,0 +1,38 @@
+<div class="detail-container">
+  <!-- Back button to course grid -->
+  <button routerLink="/courses" class="back-btn">&larr; Back to Courses Grid</button>
+
+  <!-- Error display box -->
+  <div *ngIf="errorMessage" class="error-box">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Course details wrapper -->
+  <div *ngIf="course; else loadingTpl" class="course-detail-card">
+    <h2>{{ course.name }} Details</h2>
+    <hr>
+    <p><strong>Course Code:</strong> {{ course.code }}</p>
+    <p><strong>Credits:</strong> {{ course.credits | creditLabel }}</p>
+    <p><strong>Grade Status:</strong> {{ course.gradeStatus | uppercase }}</p>
+    
+    <hr>
+    
+    <!-- Enrolled students list -->
+    <h3>Enrolled Students (switchMap HTTP request demo)</h3>
+    <ul *ngIf="enrolledStudents.length > 0; else noStudents">
+      <li *ngFor="let student of enrolledStudents">
+        {{ student.name }} ({{ student.email }})
+      </li>
+    </ul>
+    
+    <ng-template #noStudents>
+      <p class="no-students-msg">No students are currently enrolled in this course.</p>
+    </ng-template>
+  </div>
+
+  <ng-template #loadingTpl>
+    <div *ngIf="!errorMessage">
+      <p>Loading course details...</p>
+    </div>
+  </ng-template>
+</div>

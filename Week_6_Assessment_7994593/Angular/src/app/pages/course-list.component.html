@@ -1,0 +1,50 @@
+<h2>Available Courses</h2>
+
+<!-- Task 1 Step 71: Query search input binding -->
+<div class="search-section">
+  <label for="courseSearch">Search Courses: </label>
+  <input 
+    id="courseSearch" 
+    type="text" 
+    [(ngModel)]="searchTerm" 
+    (input)="onSearchChange()" 
+    placeholder="Type name or code...">
+</div>
+
+<!-- Task 1 Step 96: Loading status using async pipe -->
+<div *ngIf="isLoading$ | async; else contentSection">
+  <p class="loading-notice">Loading courses from JSON-Server...</p>
+</div>
+
+<ng-template #contentSection>
+  <!-- Error banner display -->
+  <div *ngIf="errorMessage$ | async as errMsg" class="error-banner">
+    {{ errMsg }}
+  </div>
+
+  <!-- Task 1 Step 96: Iterating store list using async pipe -->
+  <div *ngIf="(courses$ | async) as list">
+    <!-- Check if length > 0, else show noCourses template -->
+    <div *ngIf="list.length > 0; else noCourses" class="courses-grid">
+      <!-- Click event triggers goToDetails navigation -->
+      <app-course-card 
+        *ngFor="let course of list; trackBy: trackByCourseId"
+        [course]="course" 
+        (enrollRequested)="onEnroll($event)"
+        (click)="goToDetails(course)"
+        appHighlight="lightblue"
+        class="card-wrapper">
+      </app-course-card>
+    </div>
+  </div>
+</ng-template>
+
+<!-- Empty state template -->
+<ng-template #noCourses>
+  <p class="no-courses-msg">No courses available.</p>
+</ng-template>
+
+<!-- Selected course footer display -->
+<div *ngIf="selectedCourseId" class="selected-box">
+  <p>Selected course ID: {{ selectedCourseId }}</p>
+</div>

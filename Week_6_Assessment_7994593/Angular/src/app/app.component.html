@@ -1,0 +1,21 @@
+<!-- Task 3 Step 91: Global loading spinner/banner using async pipe -->
+<div *ngIf="isLoading$ | async" class="global-loader-banner">
+  Processing request... Please wait.
+</div>
+
+<!-- Navigation Header -->
+<header class="navbar">
+  <div class="logo">Student Course Portal</div>
+  <nav>
+    <a routerLink="/home" routerLinkActive="active-link">Home Dashboard</a>
+    <a routerLink="/courses" routerLinkActive="active-link">Courses Grid</a>
+    <a routerLink="/enroll" routerLinkActive="active-link">Enroll (Template)</a>
+    <a routerLink="/enroll/reactive" routerLinkActive="active-link">Enroll (Reactive)</a>
+    <a routerLink="/profile" routerLinkActive="active-link">Student Profile</a>
+  </nav>
+</header>
+
+<!-- Main Page Content Area -->
+<main class="content-container">
+  <router-outlet></router-outlet>
+</main>

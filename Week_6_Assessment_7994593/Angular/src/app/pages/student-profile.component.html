@@ -1,0 +1,27 @@
+<h2>Student Profile</h2>
+
+<!-- Task 2 Step 66: Display enrolled courses list using store selector and async pipe -->
+<div class="profile-card">
+  <h3>Academic Profile Card</h3>
+  <p><strong>Student Status:</strong> Registered / Active</p>
+  
+  <h4>Your Enrolled Courses list:</h4>
+  
+  <div *ngIf="enrolledCourses$ | async as enrolledCourses">
+    <ul *ngIf="enrolledCourses.length > 0; else noEnrolled">
+      <li *ngFor="let course of enrolledCourses">
+        <strong>{{ course.name }}</strong> ({{ course.code }}) — {{ course.credits }} Credits
+        <button (click)="unenroll(course.id)" class="unenroll-action-btn">
+          Unenroll
+        </button>
+      </li>
+    </ul>
+  </div>
+  
+  <!-- Empty state template -->
+  <ng-template #noEnrolled>
+    <p class="empty-list-msg">
+      You are not enrolled in any courses. Visit the <a routerLink="/courses">Courses List</a> to enroll.
+    </p>
+  </ng-template>
+</div>

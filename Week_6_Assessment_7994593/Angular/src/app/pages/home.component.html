@@ -1,0 +1,49 @@
+<!-- Task 1 Step 11: String interpolation -->
+<h1>{{ portalName }}</h1>
+
+<div class="card">
+  <h3>Binding Demonstration</h3>
+  
+  <!-- Helper check box to toggle isPortalActive state dynamically -->
+  <label>
+    <input type="checkbox" [checked]="isPortalActive" (change)="togglePortalActiveState()">
+    Portal Active (Controls state of button below)
+  </label>
+  
+  <br><br>
+
+  <!-- Task 1 Step 12 & 13: Property binding and Event binding -->
+  <button [disabled]="!isPortalActive" (click)="onEnrollClick()">
+    Enroll Now
+  </button>
+
+  <!-- Output message updated on button click -->
+  <p *ngIf="message" class="message-text">{{ message }}</p>
+</div>
+
+<div class="card">
+  <h3>Two-Way Data Binding Demonstration</h3>
+  <!-- Task 1 Step 14: Two-way binding with ngModel -->
+  <label for="search">Search Term: </label>
+  <input id="search" type="text" [(ngModel)]="searchTerm" placeholder="Type to search...">
+  
+  <p>Searching for: <strong>{{ searchTerm }}</strong></p>
+</div>
+
+<div class="card stats-card">
+  <h3>Stats Summary</h3>
+  <p>Total courses loaded on Home init: <strong>{{ coursesCount }}</strong></p>
+</div>
+
+<!-- Task 1 Step 61 & 62: CourseSummaryWidget injection check -->
+<app-course-summary-widget></app-course-summary-widget>
+
+<!-- Task 2 Step 67: Scoped hierarchical DI check -->
+<div class="notifications-section">
+  <h3>Hierarchical DI Demonstration</h3>
+  <p>These two notification widgets provide <code>NotificationService</code> at component-level. Adding a notification to Widget 1 will not affect Widget 2, proving they use separate service instances.</p>
+  <div style="display: flex; gap: 20px;">
+    <app-notification [instanceId]="1" style="flex: 1;"></app-notification>
+    <app-notification [instanceId]="2" style="flex: 1;"></app-notification>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+/* Basic cards for grouping elements */
+.card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 15px 0;
+  background-color: #fff;
+  max-width: 600px;
+}
+
+.stats-card {
+  border-left: 5px solid #2196f3;
+}
+
+.message-text {
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Button style */
+button {
+  padding: 8px 16px;
+  border: 1px solid #777;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #e0e0e0;
+  color: #888;
+  cursor: not-allowed;
+}
+
+input[type="text"] {
+  padding: 6px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.notifications-section {
+  border-top: 1px solid #eee;
+  margin-top: 25px;
+  padding-top: 20px;
+  max-width: 600px;
+}

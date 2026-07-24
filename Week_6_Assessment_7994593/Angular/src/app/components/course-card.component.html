@@ -1,0 +1,32 @@
+<!-- Dynamic class binding via cardClasses getter and style binding via cardStyle getter -->
+<div class="course-card" [ngClass]="cardClasses" [ngStyle]="cardStyle">
+  <h3>{{ course.name }}</h3>
+  <p>Course Code: {{ course.code }}</p>
+  
+  <!-- Applying the custom creditLabel pipe -->
+  <p>Credits: {{ course.credits | creditLabel }}</p>
+
+  <!-- Structural directive ngSwitch for grade status badges -->
+  <div [ngSwitch]="course.gradeStatus" class="badge-row">
+    Grade Status: 
+    <span *ngSwitchCase="'passed'" class="badge badge-passed">Passed</span>
+    <span *ngSwitchCase="'failed'" class="badge badge-failed">Failed</span>
+    <span *ngSwitchCase="'pending'" class="badge badge-pending">Pending</span>
+    <span *ngSwitchDefault class="badge">Unknown</span>
+  </div>
+
+  <div class="card-buttons">
+    <!-- Passing $event to stop route event bubbling -->
+    <button (click)="onEnrollClick($event)">
+      {{ isEnrolled() ? 'Unenroll' : 'Enroll' }}
+    </button>
+    <button (click)="toggleDetails($event)">
+      {{ isExpanded ? 'Hide Details' : 'Show Details' }}
+    </button>
+  </div>
+
+  <!-- Details toggle based on isExpanded -->
+  <div *ngIf="isExpanded" class="details-box">
+    <p><strong>Detailed course info:</strong> This course is designed to cover the core curriculum of {{ course.name }}. Registered students should focus on standard academic outcomes.</p>
+  </div>
+</div>

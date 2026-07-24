@@ -1,0 +1,14 @@
+<div class="notification-box">
+  <h4>Notification Widget #{{ instanceId }}</h4>
+  <p>Local notifications list:</p>
+  <ul>
+    <li *ngFor="let msg of notifications">{{ msg }}</li>
+    <li *ngIf="notifications.length === 0" class="empty-state">No notifications.</li>
+  </ul>
+  
+  <div class="input-row">
+    <input type="text" [(ngModel)]="messageText" placeholder="Enter message...">
+    <button (click)="sendNotification()">Send</button>
+    <button (click)="clearNotifications()">Clear</button>
+  </div>
+</div>

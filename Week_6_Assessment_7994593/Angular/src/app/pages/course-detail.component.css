@@ -1,0 +1,48 @@
+.detail-container {
+  max-width: 600px;
+  margin: 15px auto;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.back-btn {
+  padding: 6px 12px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  background-color: #fcfcfc;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.back-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.course-detail-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 4px;
+}
+
+.error-box {
+  color: #c62828;
+  border: 1px solid #c62828;
+  background-color: #ffebee;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+
+.no-students-msg {
+  color: #666;
+  font-style: italic;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+}

@@ -1,0 +1,26 @@
+<div class="summary-widget">
+  <h4>Course Summary Widget (Injected <code>CourseService</code>)</h4>
+  
+  <p>Available Courses List:</p>
+  <ul>
+    <li *ngFor="let c of courses">
+      ID {{ c.id }}: {{ c.name }} ({{ c.code }})
+    </li>
+  </ul>
+  <p>Total Count inside Widget: <strong>{{ courses.length }}</strong></p>
+
+  <fieldset class="add-fieldset">
+    <legend>Test Singleton Service Instance</legend>
+    <div class="form-row">
+      <label for="widget-name">Name: </label>
+      <input id="widget-name" type="text" [(ngModel)]="newCourseName" placeholder="e.g. Physics I">
+    </div>
+    <div class="form-row">
+      <label for="widget-code">Code: </label>
+      <input id="widget-code" type="text" [(ngModel)]="newCourseCode" placeholder="e.g. PHYS101">
+    </div>
+    <button (click)="addQuickCourse()" class="quick-add-btn">
+      Add Course (Reflected globally)
+    </button>
+  </fieldset>
+</div>

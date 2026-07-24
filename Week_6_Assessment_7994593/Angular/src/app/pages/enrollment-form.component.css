@@ -1,0 +1,117 @@
+/* Form styling structure */
+form {
+  max-width: 450px;
+  background-color: #fff;
+  font-family: sans-serif;
+  margin-top: 15px;
+}
+
+.form-control-group {
+  margin-bottom: 15px;
+}
+
+.form-control-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-control-group input[type="text"],
+.form-control-group input[type="email"],
+.form-control-group input[type="number"],
+.form-control-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-size: 0.95em;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-row input {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.checkbox-row label {
+  display: inline;
+  font-weight: normal;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+/* Task 2 Step 45: Required Angular validation CSS state selectors */
+.ng-invalid.ng-touched {
+  border-color: red !important;
+}
+
+.ng-valid.ng-touched {
+  border-color: green !important;
+}
+
+/* Custom validation indicators for checkboxes since borders don't render on checkbox */
+input[type="checkbox"].ng-invalid.ng-touched {
+  outline: 1px solid red;
+}
+
+/* Error text displays */
+.error-container {
+  margin-top: 4px;
+}
+
+.error-text {
+  color: red;
+  font-size: 0.85em;
+  display: block;
+}
+
+/* Successful submit notice box */
+.success-box {
+  padding: 12px;
+  background-color: #e8f5e9;
+  border: 1px solid #2e7d32;
+  color: #2e7d32;
+  font-weight: bold;
+  margin-bottom: 15px;
+  max-width: 450px;
+  border-radius: 4px;
+}
+
+/* Buttons style */
+.actions-row button {
+  padding: 8px 16px;
+  margin-right: 10px;
+  border: 1px solid #666;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.actions-row button:disabled {
+  background-color: #e0e0e0;
+  border-color: #ccc;
+  color: #888;
+  cursor: not-allowed;
+}
+
+.actions-row button:hover:not(:disabled) {
+  background-color: #e6e6e6;
+}
+
+.error-box {
+  padding: 12px;
+  background-color: #ffebee;
+  border: 1px solid #c62828;
+  color: #c62828;
+  font-weight: bold;
+  margin-bottom: 15px;
+  max-width: 450px;
+  border-radius: 4px;
+}
+
